@@ -27,6 +27,7 @@ pfServer.use(cors())
 //middleware to parse the data received as json
 pfServer.use(express.json());
 
+// export upload folder from the server side
 pfServer.use('/upload',express.static('./uploads'))
 
 //use router

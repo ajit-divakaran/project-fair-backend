@@ -6,13 +6,13 @@ const jwtMiddleware = (req,res,next)=>{
     try {
         const jwtResponse = jwt.verify(token,"secretkey")
         console.log(jwtResponse);
-        res.payload = jwtResponse.userId
+        req.payload = jwtResponse.userId
         next()
     } catch (error) {
         res.status(401).json('authorization failed due to', error)
 
     }
-    next()
+    
 }
 
 module.exports = jwtMiddleware
